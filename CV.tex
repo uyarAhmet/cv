@@ -1,0 +1,203 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Ahmet}{Uyar}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Welby Terrace, Ashburn, VA 20148}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \phone[mobile]{909-839-3097}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+% \email{xpan1@swarthmore.edu}                               % optional, remove / comment the line if not wanted
+% \homepage{shawnpan.me}                         % optional, remove / comment the line if not wanted
+% \extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-23mm}
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ \iffalse \faGlobe\enspace \fi & \faEnvelopeO\enspace auyar19@ku.edu.tr & \faGithub\enspace uyarahmet &  \faMobile\enspace 571-413-7968\\  
+\end{tabular}
+\end{center}
+
+\section{EDUCATION}
+{\customcventry{May 2023}{GPA: 3.6}{Computer Enginerring}{Koç University}{Istanbul, Turkey}{}{}}
+
+
+\section{KEY SKILLS}
+
+  {\begin{itemize}
+    \item C, Java, Javascript, Python
+    \item Spring Framework, Django, React
+    \item Agile/Scrum methodology
+    \item Teaching
+  \end{itemize}
+  }
+
+\section{EXPERIENCE}
+
+{\customcventry{June 2021 - Present}{Research and Development Intern}{eKare Inc.}{Fairfax, Virginia}{}
+{\begin{itemize}
+  \item Developing facial recognition and object detection AI solutions for filtering invalid photos inside the eKare database. Integrating the filtering middle ware to eKare GAUSS API using the Django framework. 
+\end{itemize}
+}
+}
+
+{\customcventry{October 2020 - January 2021}{Undergraduate Teaching Assistant}{Koç University}{Istanbul, Turkey}{}
+{\begin{itemize}
+  \item Became the Teaching assistant for the Discrete Mathematics for Computer Science and Engineers class (COMP106). Assisted students in comprehending fundamental mathematical subjects of computer science \hspace{45.0pt}\textit\
+    \item I was the section leader of 12 engineering students for the introductory programming for engineers with python class (COMP125). Held weekly problem sessions and assisted students.
+\end{itemize}
+}
+}
+\
+\section{VOLUNTEER EXPERIENCE}
+
+{\customcventry{October 2020 - January 2021}{Instructor}{CS101: Merhaba, Dünya!}{Istanbul, Turkey}{}
+{\begin{itemize}
+  \item As a group of students at Koç University, we created a program that taught 100+ highschool students introductory python. visit https://cs101-merhabadunya.github.io/ for more information. 
+\end{itemize}
+}
+}
+\
+
+\section{RELEVANT COURSEWORK}
+\begin{minipage}{\maincolumnwidth}%
+	\small{
+    	\begin{itemize}
+          \item COMP202: Data Structures and Algorithms with Java
+\item COMP201: Computer Systems and Organization with C
+\item COMP132: Advanced Programming with Java
+\item COMP106: Discrete Mathematics for Computer Science and Engineers
+\item ENGR200: Probability and Statistics for Engineers
+\item ELEC204: Digital Design
+\item ACWR106: Academic Writing for Science and Engineering
+
+		\end{itemize}}%
+\end{minipage}%
+
+
+\section{AWARDS AND ACHIEVEMENTS}
+\begin{minipage}{\maincolumnwidth}%
+	\small{
+    	\begin{itemize}
+          \item Vehbi Koç Schollarship award, November, 2020
+          \item Partial undergraduate scholarship (\%50) due to my ranking score on the Nationwide University Entrance Exam. Ranked 1426th (<\%0.06)
+          \item Bilingual proffeciency in both English and Turkish
+		\end{itemize}}%
+\end{minipage}%
+
+
+      
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.
+
